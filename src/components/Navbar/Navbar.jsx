@@ -1,17 +1,28 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
 import logo from "../../assets/logo.jpg"
+import { useContext } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+
+    const  handleLogOut = () => {
+        logOut()
+            .then(resut => {
+                resut.user
+            })
+            .catch(error => console.error(error))
+    }
+
 
     const navLink = <>
         <li> <NavLink to="/">Home</NavLink> </li>
-        <li> <NavLink to="/events">Events</NavLink> </li>
+        <li> <NavLink to="/events">Gallery</NavLink> </li>
         <li> <NavLink to="/login">Login</NavLink> </li>
-        <li> <NavLink to="/register">Register</NavLink> </li>
+        {/* <li> <NavLink to="/register">Register</NavLink> </li> */}
 
 
     </>
-
-
 
     return (
         <div className="navbar mb-4">
@@ -26,12 +37,22 @@ const Navbar = () => {
                 </div>
                 <img className="w-20 lg:w-32" src={logo} alt="" />
             </div>
-            <div className="navbar-center">
-            </div>
+            {/* <div className="navbar-center gap-2">
+                
+            </div> */}
             <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal gap-6 px-1 font-semibold mr-10">
                     {navLink}
                 </ul>
+            </div>
+            <div className="navbar-end">
+                <img src="" alt="" />
+                {
+                    user ? <button onClick={handleLogOut} className="btn">Log out</button> : <Link to="/login">
+                        <button className="btn">Login</button>
+                    </Link>
+                }
+
             </div>
         </div>
     );

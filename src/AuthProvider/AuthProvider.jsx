@@ -17,12 +17,14 @@ const AuthProvider = ({ children }) => {
     
     const auth = getAuth(app)
     const createUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const googleProvider = new GoogleAuthProvider()
 
     const googleLogin = () => {
+        setLoading(true)
         signInWithPopup(auth, googleProvider)
             .then(result => {
                 result.user

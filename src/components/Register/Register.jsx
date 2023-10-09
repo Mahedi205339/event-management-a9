@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { FcGoogle } from 'react-icons/fc'
+import { AiOutlineGithub } from 'react-icons/ai'
 const Register = () => {
     const { createUser } = useContext(AuthContext);
 
@@ -10,7 +11,6 @@ const Register = () => {
 
     const handleRegister = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
@@ -43,8 +43,10 @@ const Register = () => {
                 {
                     confirmMessage && < p className="text-green-600 font-bold">{confirmMessage}</p>
                 }
+
                 <div className="text-center lg:text-left">
                     <h1 className="text-4xl font-bold">Please Register</h1>
+
                 </div>
                 <div className="card  w-full max-w-sm  bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
@@ -82,6 +84,16 @@ const Register = () => {
                         </div>
                     </form>
                     <p className="mb-4 text-center">Already have an account? Please <Link className="font-bold text-yellow-600 underline" to="/login">Login</Link> </p>
+                </div>
+                <div className="gap-2">
+                    <button className="btn my-4 btn-outline w-full">
+                        <FcGoogle></FcGoogle>
+                        Google
+                    </button>
+                    <button className="btn btn-outline w-full">
+                        <AiOutlineGithub></AiOutlineGithub>
+                        Github
+                    </button>
                 </div>
             </div>
 

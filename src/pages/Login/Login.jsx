@@ -1,7 +1,8 @@
-import { Link, useLocation, } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-
+import { FcGoogle } from 'react-icons/fc'
+import { AiOutlineGithub } from 'react-icons/ai'
 
 const Login = () => {
 
@@ -10,24 +11,24 @@ const Login = () => {
     const [error, setError] = useState("")
 
     const location = useLocation();
-    console.log('user in location page', location)
+    const navigate = useNavigate();
 
     const handleLogin = e => {
         e.preventDefault();
-        console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
         setConfirmMessage("")
         setError("")
         signIn(email, password)
             .then(result => {
                 console.log(result.user);
+
+                navigate(location?.state ? location.state : '/')
+
                 setConfirmMessage("Email successfully logged in")
             })
             .catch(error => {
-                console.error(error);
                 setError(error.message)
             })
     }
@@ -71,6 +72,16 @@ const Login = () => {
                         </div>
                     </form>
                     <p className="mb-4 text-center">Do not have an account ? Please <Link className="font-bold text-yellow-600 underline" to="/register">Register</Link> </p>
+                </div>
+                <div className="gap-2">
+                    <button className="btn my-4 btn-outline w-full">
+                        <FcGoogle></FcGoogle>
+                        Google
+                    </button>
+                    <button className="btn btn-outline w-full">
+                        <AiOutlineGithub></AiOutlineGithub>
+                        Github
+                    </button>
                 </div>
             </div>
         </div>

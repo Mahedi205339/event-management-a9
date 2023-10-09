@@ -26,11 +26,11 @@ const StaffSwipe = () => {
 
                 </div>
                 <Swiper
-                    slidesPerView={3}
+                    slidesPerView={1}
                     spaceBetween={30}
                     centeredSlides={true}
                     autoplay={{
-                        delay: 2500,
+                        delay: 2000,
                         disableOnInteraction: false,
                     }}
                     pagination={{
