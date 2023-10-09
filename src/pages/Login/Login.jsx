@@ -2,11 +2,10 @@ import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc'
-import { AiOutlineGithub } from 'react-icons/ai'
-
+import Swal from 'sweetalert2'
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn, googleLogin } = useContext(AuthContext)
     const [confirmMessage, setConfirmMessage] = useState("")
     const [error, setError] = useState("")
 
@@ -18,11 +17,24 @@ const Login = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        setConfirmMessage("")
+        if (!/[A-Z].{8,}$/.test(password)){
+            setError('Your password should have contain at least 8 character contained Capital letter ')
+            return
+        }
+            setConfirmMessage("")
         setError("")
         signIn(email, password)
             .then(result => {
-                console.log(result.user);
+                result.user
+
+
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Successfully Booked',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
 
                 navigate(location?.state ? location.state : '/')
 
@@ -74,14 +86,11 @@ const Login = () => {
                     <p className="mb-4 text-center">Do not have an account ? Please <Link className="font-bold text-yellow-600 underline" to="/register">Register</Link> </p>
                 </div>
                 <div className="gap-2">
-                    <button className="btn my-4 btn-outline w-full">
+                    <button onClick={googleLogin} className="btn my-4 btn-outline w-full">
                         <FcGoogle></FcGoogle>
                         Google
                     </button>
-                    <button className="btn btn-outline w-full">
-                        <AiOutlineGithub></AiOutlineGithub>
-                        Github
-                    </button>
+
                 </div>
             </div>
         </div>

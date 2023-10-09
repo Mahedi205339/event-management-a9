@@ -1,13 +1,15 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FcGoogle } from 'react-icons/fc'
-import { AiOutlineGithub } from 'react-icons/ai'
+
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleLogin } = useContext(AuthContext);
 
     const [confirmMessage, setConfirmMessage] = useState("")
     const [error, setError] = useState("")
+    const location = useLocation();
+    const navigate = useNavigate()
 
     const handleRegister = e => {
         e.preventDefault();
@@ -16,12 +18,17 @@ const Register = () => {
         const password = form.get('password');
         const name = form.get('name')
         console.log(email, name, password)
+        if (!/[A-Z].{8,}$/.test(password)) {
+            setError('Your password should have contain at least 8 character  Capital letter ')
+            return
+        }
         setError('');
         setConfirmMessage('')
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
+                navigate(location?.state ? location.state : '/')
                 setConfirmMessage("User successfully registered")
             })
             .catch(error => {
@@ -86,14 +93,11 @@ const Register = () => {
                     <p className="mb-4 text-center">Already have an account? Please <Link className="font-bold text-yellow-600 underline" to="/login">Login</Link> </p>
                 </div>
                 <div className="gap-2">
-                    <button className="btn my-4 btn-outline w-full">
+                    <button onClick={googleLogin} className="btn my-4 btn-outline w-full">
                         <FcGoogle></FcGoogle>
                         Google
                     </button>
-                    <button className="btn btn-outline w-full">
-                        <AiOutlineGithub></AiOutlineGithub>
-                        Github
-                    </button>
+
                 </div>
             </div>
 

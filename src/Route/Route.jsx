@@ -6,6 +6,8 @@ import Login from "../pages/Login/Login";
 import Register from "../components/Register/Register";
 import Events from "../pages/Events/Events";
 import PrivateRoute from "./PrivateRoute";
+import Booked from "../pages/Booked/Booked";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 
 const route = createBrowserRouter([
@@ -34,11 +36,18 @@ const route = createBrowserRouter([
                 element: <Login></Login>
             },
             {
+                path : '/booked',
+                element:<PrivateRoute><Booked></Booked></PrivateRoute>,
+                loader: () => fetch('/event.json')
+            },
+            {
                 path: '/register',
                 element: <Register></Register>
             }
-        ]
+        ],
+        errorElement:<ErrorPage></ErrorPage>
     }
+    
 ])
 
 export default route;

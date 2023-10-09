@@ -4,13 +4,16 @@
         "image": "https://i.ibb.co/F3Yh8g6/Depositphotos-1713895.jpg",
         "background_img": "https://i.ibb.co/r0H53kd/banner1.jpg",
         "title": "Birthday Party",
-        "description": "Celebrate a special birthday with friends and family.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
+        "price": 750,
+        "description": "Commemorate a milestone in love and commitment.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
+         
     },
     {
         "id": 2,
         "image": "https://i.ibb.co/DLZC2Xs/Depositphotos-57065837-original.jpg",
         "background_img": "https://i.ibb.co/9hP8gmL/gallery-6.jpg",
         "title": "Anniversary",
+        "price": 750,
         "description": "Commemorate a milestone in love and commitment.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
     },
     {
@@ -18,6 +21,7 @@
         "image": "https://i.ibb.co/sC2ShtK/images.jpg",
         "background_img": "https://i.ibb.co/HXYVByV/banner4.jpg",
         "title": "Baby Shower",
+        "price": 750,
         "description": "Welcome a new addition to the family with joy and anticipation.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
     },
     {
@@ -25,11 +29,13 @@
         "image": "https://i.ibb.co/2Yht7gV/pexels-pixabay-34761.jpg",
         "background_img": "https://i.ibb.co/NtGBpVF/retirement-messages-850x478.webp",
         "title": "Retirement Party",
+        "price": 750,
         "description": "Bid farewell to a colleague embarking on a new journey.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
     },
     {
         "id": 5,
         "image": "https://i.ibb.co/GQ0CGWZ/114134-kickstart-your-celebrations-with-an-engagement-party-to-remember-image-credit-party-delights.jpg",
+        "price": 750,
         "background_img": "https://i.ibb.co/x5BNN7M/banner3.jpg",
         "title": "Engagement Party",
         "description": "Celebrate the engagement of two souls in love.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
@@ -39,6 +45,7 @@
         "image": "https://i.ibb.co/rcYgPqw/gallery-3.jpg",
         "background_img": "https://i.ibb.co/fDJbCcZ/banner2.jpg",
         "title": "Wedding",
+        "price": 750,
         "description": "Join two hearts in matrimony and celebrate their union.The process of planning and coordinating the event is usually referred to as event planning and which can include budgeting, scheduling, site selection, acquiring necessary permits, coordinating transportation and parking, arranging for speakers or entertainers, arranging decor, event security, catering, coordinating with third-party vendors, and emergency plans. Each event is different in its nature so process of planning and execution of each event differs on basis of the type of event."
     }
 ]
