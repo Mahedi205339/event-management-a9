@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredBookedEvents } from "../../Utilities/localstorage";
 import BookedEvent from "../../components/BookedEvent/BookedEvent";
-
 const Booked = () => {
 
     const [eventBooked, setEventBook] = useState([])

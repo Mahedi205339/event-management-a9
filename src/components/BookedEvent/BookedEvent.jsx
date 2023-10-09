@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 
 const BookedEvent = ({event}) => {
 
-    const { title, image, description ,id} = event
+    const { title, image, description } = event
 
     return (
         
@@ -19,5 +20,10 @@ const BookedEvent = ({event}) => {
         </div>
     );
 };
+
+BookedEvent.propTypes = {
+    event :PropTypes.array ,
+
+  };
 
 export default BookedEvent;
